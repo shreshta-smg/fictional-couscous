@@ -69,26 +69,8 @@ class FamilyDetailResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('full_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('address_line')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('veda')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('category')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('sub_category')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('gothra')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('area')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('taluk')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('profession')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email_address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('phone_number')
-                    ->searchable(),
+            Tables\Columns\TextColumn::make('phone_number'),
+            Tables\Columns\TextColumn::make('category'),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),

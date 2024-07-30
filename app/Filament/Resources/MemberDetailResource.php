@@ -66,20 +66,11 @@ class MemberDetailResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('member_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('related_as')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('is_married')
-                    ->searchable(),
+            Tables\Columns\TextColumn::make('is_married'),
                 Tables\Columns\TextColumn::make('age')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('education_profession')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email_address')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('phone_number')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('family_detail.id')
+            Tables\Columns\TextColumn::make('family_detail.full_name')
                     ->numeric()
                     ->sortable(),
             ])
