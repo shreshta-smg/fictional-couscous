@@ -18,15 +18,15 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // $familyDetails = File::get(base_path('/database/seeders/survey-data/family_details.json'));
-        $memberDetails = File::get(base_path('/database/seeders/survey-data/member_details.json'));
+        // $memberDetails = File::get(base_path('/database/seeders/survey-data/member_details.json'));
         // $fdJson = json_decode(json: $familyDetails, associative: true);
-        $mdJson = json_decode(json: $memberDetails, associative: true);
+        // $mdJson = json_decode(json: $memberDetails, associative: true);
         // foreach ($fdJson as $fd1) {
         //     FamilyDetail::jsonToFamilyDetail($fd1);
         // }
         // print_r(FamilyDetail::where("family_id", "FD1")->first()->id);
-        foreach ($mdJson as $md1) {
-            MemberDetail::jsonToMemberDetail($md1);
-        }
+        // foreach ($mdJson as $md1) {
+        //     MemberDetail::jsonToMemberDetail($md1);
+        // }
     }
 }
