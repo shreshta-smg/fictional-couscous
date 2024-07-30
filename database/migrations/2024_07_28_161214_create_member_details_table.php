@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('email_address')->nullable();
             $table->string('phone_number', 25)->nullable();
             $table->foreignIdFor(FamilyDetail::class)->nullable();
-            $table->index(['age', 'related_as']);
+            $table->index(['member_name', 'age', 'related_as']);
         });
     }
 

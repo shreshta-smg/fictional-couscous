@@ -16,4 +16,20 @@ class MemberDetail extends Model
     {
         return $this->belongsTo(FamilyDetail::class);
     }
+
+    public static function jsonToMemberDetail($jsonData): MemberDetail
+    {
+        $mFamilyId = $jsonData["FamilyID"];
+        print("Trying to insert FamilyID with " . $mFamilyId . "\n");
+        return MemberDetail::create([
+            'member_name' => $jsonData["MemberName"],
+            'related_as' => $jsonData["RelatedAs"],
+            "is_married" => $jsonData["IsMarried"],
+            "age" => $jsonData["Age"],
+            "education_profession" => $jsonData["Education/Occupation"],
+            "email_address" => $jsonData["EmailAddress"],
+            "phone_number" => $jsonData["PhoneNumber"],
+            "family_detail_id" => FamilyDetail::where("family_id", '=', $jsonData["FamilyID"])->first()->id
+        ]);
+    }
 }
