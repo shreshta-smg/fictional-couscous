@@ -100,6 +100,8 @@ class FamilyDetailResource extends Resource
             'index' => Pages\ListFamilyDetails::route('/'),
             'create' => Pages\CreateFamilyDetail::route('/create'),
             'edit' => Pages\EditFamilyDetail::route('/{record}/edit'),
+            'reports-new' => Pages\Exports::route("/reports/new"),
+            'reports' => Pages\ReportFile::route("/reports"),
         ];
     }
 

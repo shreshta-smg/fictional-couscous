@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('profession', 45)->nullable();
             $table->string('email_address')->nullable();
             $table->string('phone_number', 25)->nullable();
-            $table->string('phone_number', 15)->nullable();
+            $table->string('family_id', 15)->nullable();
             $table->index(['full_name', 'gothra', 'veda']);
             $table->index(['family_id']);
         });

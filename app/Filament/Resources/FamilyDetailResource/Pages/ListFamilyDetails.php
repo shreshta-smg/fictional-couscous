@@ -13,6 +13,8 @@ class ListFamilyDetails extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('reports')->label("Reports")->url(FamilyDetailResource::getUrl('reports')),
+            Actions\Action::make('newReports')->label("Generate Reports")->url(FamilyDetailResource::getUrl('reports-new')),
             Actions\CreateAction::make(),
         ];
     }

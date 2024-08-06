@@ -44,7 +44,7 @@ class MemberDetailResource extends Resource
                     ->tel()
                     ->maxLength(25),
                 Forms\Components\Select::make('family_detail_id')
-                    ->relationship('family_detail', 'id'),
+            ->relationship('family_detail', 'full_name')->native(false),
             ]);
     }
 

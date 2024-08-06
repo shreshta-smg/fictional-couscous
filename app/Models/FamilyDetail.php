@@ -13,14 +13,16 @@ class FamilyDetail extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = ['id'];
 
-    public function member_details(): HasMany
+    public function members(): HasMany
     {
         return $this->hasMany(MemberDetail::class);
     }
 
     public static function jsonToFamilyDetail($jsonData): FamilyDetail | null
     {
-        $familyId = $jsonData["FamilyID"];
+        // $familyId = $jsonData["FamilyID"];
+        $slNo = $jsonData['SlNo'];
+        $familyId = "FD$slNo";
         Log::info("Trying to insert FamilyID with " . $familyId . "\n");
         try {
             return FamilyDetail::create([
@@ -39,7 +41,7 @@ class FamilyDetail extends Model
             ]);
         } catch (\Throwable $th) {
             Log::error("Unable to insert for familyID $familyId with $th->getMessage() \n");
-            //throw $th;
+            throw $th;
         }
         return null;
     }
