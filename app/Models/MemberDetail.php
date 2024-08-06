@@ -15,12 +15,7 @@ class MemberDetail extends Model
 
     public function family(): BelongsTo
     {
-        return $this->belongsTo(FamilyDetail::class);
-    }
-
-    public static function scopeDistinctFamilyDetailIds($query)
-    {
-        return $query->distinct('family_detail_id');
+        return $this->belongsTo(FamilyDetail::class, 'family_detail_id');
     }
 
     public static function jsonToMemberDetail($jsonData): MemberDetail | null

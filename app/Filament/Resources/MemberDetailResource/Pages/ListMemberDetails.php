@@ -5,6 +5,7 @@ namespace App\Filament\Resources\MemberDetailResource\Pages;
 use App\Filament\Resources\MemberDetailResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Support\Colors\Color;
 
 class ListMemberDetails extends ListRecords
 {
@@ -13,7 +14,7 @@ class ListMemberDetails extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->outlined()->color(Color::Yellow),
         ];
     }
 }

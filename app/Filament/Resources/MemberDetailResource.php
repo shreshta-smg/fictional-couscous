@@ -44,7 +44,7 @@ class MemberDetailResource extends Resource
                     ->tel()
                     ->maxLength(25),
                 Forms\Components\Select::make('family_detail_id')
-            ->relationship('family_detail', 'full_name')->native(false),
+            ->relationship('family', 'full_name')->native(false),
             ]);
     }
 
@@ -67,12 +67,11 @@ class MemberDetailResource extends Resource
                 Tables\Columns\TextColumn::make('member_name')
                     ->searchable(),
             Tables\Columns\TextColumn::make('is_married'),
-                Tables\Columns\TextColumn::make('age')
-                    ->numeric()
-                    ->sortable(),
-            Tables\Columns\TextColumn::make('family_detail.full_name')
-                    ->numeric()
-                    ->sortable(),
+            Tables\Columns\TextColumn::make('age')
+            ->numeric()
+            ->sortable(),
+            Tables\Columns\TextColumn::make('phone_number'),
+            Tables\Columns\TextColumn::make('family.full_name')
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
